@@ -11,7 +11,9 @@
 
 ### 🛠️ Installation
 
-```wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh```
+```
+wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh
+```
 
 
 ⚙️ Usage Guide
@@ -32,11 +34,15 @@ Exit
 🔧 Troubleshooting
 Permission issues:
 
-```sudo chmod +x /root/ssh_monitor.sh```
+```
+sudo chmod +x /root/ssh_monitor.sh
+```
 
 IPTables problems:
 
-```apt install iptables-persistent```
+```
+apt install iptables-persistent
+```
 
 🌍 نسخه فارسی
 📜 امکانات اصلی
@@ -52,7 +58,9 @@ IPTables problems:
 
 🛠️ نصب و راه‌اندازی
 
-```wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh```
+```
+wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh
+```
 
 ⚙️ راهنمای استفاده
 منوی اصلی:
@@ -71,10 +79,14 @@ IPTables problems:
 
 🔧 عیب‌یابی
 خطای دسترسی:
-```sudo chmod +x /root/ssh_monitor.sh```
+```
+sudo chmod +x /root/ssh_monitor.sh
+```
 
 مشکلات iptables:
 
-```apt install iptables-persistent```
+```
+apt install iptables-persistent
+```
 
 <div align="center"> <p>Developed by <a href="https://hodacloud.com" target="_blank">HodaCloud</a></p> <p>📧 Support: <a href="mailto:info@hodacloud.com">info@hodacloud.com</a></p> </div>
