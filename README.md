@@ -10,7 +10,8 @@
 - Automated scheduling (daily/weekly/monthly)
 
 ### 🛠️ Installation
-bash
+
+```bash
 wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh
 ⚙️ Usage Guide
 Main Menu:
@@ -75,4 +76,4 @@ IPTables problems:
 
 ```apt install iptables-persistent```
 
-<div align="center"> <p>Developed by <a href="https://hodacloud.com" target="_blank">HodaCloud</a></p> <p>📧 Support: <a href="mailto:info@hodacloud.com">info@hodacloud.com</a></p> </div> ```
+<div align="center"> <p>Developed by <a href="https://hodacloud.com" target="_blank">HodaCloud</a></p> <p>📧 Support: <a href="mailto:info@hodacloud.com">info@hodacloud.com</a></p> </div>
