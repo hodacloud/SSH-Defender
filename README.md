@@ -10,8 +10,8 @@
 - Automated scheduling (daily/weekly/monthly)
 
 ### 🛠️ Installation
-```bash
-wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh```
+bash
+wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh
 ⚙️ Usage Guide
 Main Menu:
 
