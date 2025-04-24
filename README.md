@@ -1,49 +1,4 @@
 # SSH Monitor & Auto-Block Tool - HodaCloud
-
-## 🌐 English Version
-
-### 📜 Core Features
-- Real-time SSH attack monitoring
-- Automatic IP blocking with iptables
-- Failed login analysis
-- Top 10 attacking IPs list
-- Automated scheduling (daily/weekly/monthly)
-
-### 🛠️ Installation
-
-```
-wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh
-```
-
-
-⚙️ Usage Guide
-Main Menu:
-
-Show attack history
-
-Save failed IPs
-
-Block IPs
-
-View blocked traffic
-
-Automation setup
-
-Exit
-
-🔧 Troubleshooting
-Permission issues:
-
-```
-sudo chmod +x /root/ssh_monitor.sh
-```
-
-IPTables problems:
-
-```
-apt install iptables-persistent
-```
-
 🌍 نسخه فارسی
 📜 امکانات اصلی
 نمایش لحظه‌ای حملات SSH
@@ -84,6 +39,50 @@ sudo chmod +x /root/ssh_monitor.sh
 ```
 
 مشکلات iptables:
+
+```
+apt install iptables-persistent
+```
+
+## 🌐 English Version
+
+### 📜 Core Features
+- Real-time SSH attack monitoring
+- Automatic IP blocking with iptables
+- Failed login analysis
+- Top 10 attacking IPs list
+- Automated scheduling (daily/weekly/monthly)
+
+### 🛠️ Installation
+
+```
+wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh
+```
+
+
+⚙️ Usage Guide
+Main Menu:
+
+Show attack history
+
+Save failed IPs
+
+Block IPs
+
+View blocked traffic
+
+Automation setup
+
+Exit
+
+🔧 Troubleshooting
+Permission issues:
+
+```
+sudo chmod +x /root/ssh_monitor.sh
+```
+
+IPTables problems:
 
 ```
 apt install iptables-persistent
