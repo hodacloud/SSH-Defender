@@ -110,7 +110,7 @@
     </ul>
 
     <h2>🛠️ نصب و راه‌اندازی</h2>
-    <pre><code>```wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh```</code></pre>
+    <pre><code>wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh</code></pre>
 
     <h2>⚙️ راهنمای استفاده</h2>
     <div class="note">
@@ -125,9 +125,9 @@
 
     <h2>🔧 عیب‌یابی</h2>
     <pre><code># خطای دسترسی
-```sudo chmod +x /root/ssh_monitor.sh```</code></pre>
+sudo chmod +x /root/ssh_monitor.sh</code></pre>
     <pre><code># مشکلات iptables
-```apt install iptables-persistent```</code></pre>
+apt install iptables-persistent</code></pre>
 </div>
 
 <div class="lang-section">
@@ -142,7 +142,7 @@
     </ul>
 
     <h2>🛠️ Installation</h2>
-    <pre><code>```wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh```</code></pre>
+    <pre><code>wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SSH-Defender.sh -O /root/ssh_monitor.sh && chmod +x /root/ssh_monitor.sh && sudo /root/ssh_monitor.sh</code></pre>
 
     <h2>⚙️ Usage Guide</h2>
     <div class="note">
@@ -157,9 +157,9 @@
 
     <h2>🔧 Troubleshooting</h2>
     <pre><code># Permission issues
-```sudo chmod +x /root/ssh_monitor.sh```</code></pre>
+sudo chmod +x /root/ssh_monitor.sh</code></pre>
     <pre><code># IPTables problems
-```apt install iptables-persistent```</code></pre>
+apt install iptables-persistent</code></pre>
 </div>
 
 <div style="text-align: center; margin-top: 40px;">
