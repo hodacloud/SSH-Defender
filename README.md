@@ -20,17 +20,15 @@ wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SS
 ⚙️ راهنمای استفاده
 منوی اصلی:
 
-نمایش تاریخچه حملات
+- نمایش تاریخچه حملات
 
-ذخیره IPهای ناموفق
+- ذخیره IPهای ناموفق
 
-بلاک IPها
+- بلاک IPها
 
-نمایش ترافیک مسدود شده
+- نمایش ترافیک مسدود شده
 
-تنظیمات خودکار
-
-خروج
+- تنظیمات خودکار
 
 🔧 عیب‌یابی
 خطای دسترسی:
@@ -63,17 +61,16 @@ wget https://raw.githubusercontent.com/hodacloud/SSH-Defender/refs/heads/main/SS
 ⚙️ Usage Guide
 Main Menu:
 
-Show attack history
+- Show attack history
 
-Save failed IPs
+- Save failed IPs
 
-Block IPs
+- Block IPs
 
-View blocked traffic
+- View blocked traffic
 
-Automation setup
+- Automation setup
 
-Exit
 
 🔧 Troubleshooting
 Permission issues:
