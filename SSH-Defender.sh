@@ -3,13 +3,17 @@
 # =============================================
 # SSH Monitor & Auto-Block Tool
 # Author: HodaCloud (hodacloud.com)
-# Version: 1.3
+# Version: 1.5
 # =============================================
 
 # Configuration
 SCRIPT_PATH="/root/ssh_monitor.sh"
 CRON_CMD="/bin/bash $SCRIPT_PATH --auto"
 IP_FILE="/root/ip.txt"
+
+# Adjustable parameters
+FAILED_DURATION="30 days"      # Time range to analyze failed attempts
+TOP_IP_LIMIT=10                 # Number of top IP records to display
 
 # Colors and Styles
 RED='\033[0;31m'
@@ -46,7 +50,7 @@ show_menu() {
     draw_header
     
     echo -e " ${BLUE}${TL}══════════════════════════════════════════════════════${TR}${NC}"
-    echo -e " ${BLUE}${VR}${NC}  ${GREEN}1. View failed SSH attempts (last 30 days)          ${BLUE}${VR}${NC}"
+    echo -e " ${BLUE}${VR}${NC}  ${GREEN}1. View failed SSH attempts (last ${FAILED_DURATION})          ${BLUE}${VR}${NC}"
     echo -e " ${BLUE}${LT}──────────────────────────────────────────────────────${RT}${NC}"
     echo -e " ${BLUE}${VR}${NC}  ${GREEN}2. Save failed IPs to ${YELLOW}$IP_FILE${GREEN}                  ${BLUE}${VR}${NC}"
     echo -e " ${BLUE}${LT}──────────────────────────────────────────────────────${RT}${NC}"
@@ -74,11 +78,14 @@ save_failed_ips() {
     fi
     
     grep "Failed password" "$LOG_FILE" | awk '{print $(NF-3)}' | sort -V | uniq > "$IP_FILE"
-    
+
     if [ $? -eq 0 ]; then
+        sort -V "$IP_FILE" -o "$IP_FILE"
         echo -e "${GREEN}Operation completed successfully.${NC}"
         echo -e "IPs saved to ${YELLOW}$IP_FILE${NC}"
         echo -e "Unique IPs found: ${YELLOW}$(wc -l < "$IP_FILE")${NC}"
+        echo -e "\n${BLUE}Sorted IPs:${NC}"
+        cat "$IP_FILE"
     else
         echo -e "${RED}Operation failed!${NC}"
         return 1
@@ -160,18 +167,18 @@ remove_cron_jobs() {
 show_failed_attempts() {
     echo -e "\n${BLUE}"
     echo -e " ${TL}══════════════════════════════════════════════════════${TR}"
-    echo -e " ${VR}          ${BOLD}Failed SSH Attempts (Last 30 Days)${NC}${BLUE}          ${VR}"
+    echo -e " ${VR}          ${BOLD}Failed SSH Attempts (Last ${FAILED_DURATION})${NC}${BLUE}          ${VR}"
     echo -e " ${BL}══════════════════════════════════════════════════════${BR}${NC}"
-    
-    journalctl _COMM=sshd --since "30 days ago" | grep 'Failed password'
+
+    journalctl _COMM=sshd --since "${FAILED_DURATION} ago" | grep 'Failed password' | sort
     
     echo -e "\n${BLUE}"
     echo -e " ${TL}══════════════════════════════════════════════════════${TR}"
-    echo -e " ${VR}                 ${BOLD}Top 10 Attacking IPs${NC}${BLUE}                 ${VR}"
+    echo -e " ${VR}                 ${BOLD}Top ${TOP_IP_LIMIT} Attacking IPs${NC}${BLUE}                 ${VR}"
     echo -e " ${BL}══════════════════════════════════════════════════════${BR}${NC}"
     
-    journalctl _COMM=sshd --since "30 days ago" | grep 'Failed password' | \
-    awk '{print $(NF-3)}' | sort | uniq -c | sort -nr | head -10 | \
+    journalctl _COMM=sshd --since "${FAILED_DURATION} ago" | grep 'Failed password' | \
+    awk '{print $(NF-3)}' | sort -V | uniq -c | sort -nr | head -n "$TOP_IP_LIMIT" | sort -k2,2V | \
     while read count ip; do
         echo -e " ${YELLOW}• ${count} attempts from: ${GREEN}${ip}${NC}"
     done
